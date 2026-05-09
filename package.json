@@ -1,0 +1,19 @@
+{
+  "name": "marijuna-addiction",
+  "version": "1.0.0",
+  "description": "Cannabis Use Disorder Research Daily Report - 大麻成癮研究文獻日報",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "fetch": "node scripts/fetch_papers.mjs",
+    "report": "node scripts/generate_report.mjs",
+    "index": "node scripts/generate_index.mjs",
+    "build": "node scripts/fetch_papers.mjs --output papers.json && node scripts/generate_report.mjs --input papers.json && node scripts/generate_index.mjs"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^4.5.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
