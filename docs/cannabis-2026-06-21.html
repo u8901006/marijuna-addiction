@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cannabis Research Daily &middot; 大麻成癮研究文獻日報 &middot; 2026年6月21日</title>
+<meta name="description" content="2026年6月21日 大麻成癮（Cannabis Use Disorder）研究文獻日報，由 AI 自動彙整 PubMed 最新論文"/>
+<style>
+  :root { --bg: #f6f1e8; --surface: #fffaf2; --line: #d8c5ab; --text: #2b2118; --muted: #766453; --accent: #8c4f2b; --accent-soft: #ead2bf; --card-bg: color-mix(in srgb, var(--surface) 92%, white); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%); color: var(--text); font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
+  .container { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 60px 32px 80px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 52px; animation: fadeDown 0.6s ease both; }
+  .logo { width: 48px; height: 48px; border-radius: 14px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 4px 20px rgba(140,79,43,0.25); }
+  .header-text h1 { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+  .header-meta { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; letter-spacing: 0.3px; }
+  .badge-date { background: var(--accent-soft); border: 1px solid var(--line); color: var(--accent); }
+  .badge-count { background: rgba(140,79,43,0.06); border: 1px solid var(--line); color: var(--muted); }
+  .badge-source { background: transparent; color: var(--muted); font-size: 11px; padding: 0 4px; }
+  .summary-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 20px 60px rgba(61,36,15,0.06); animation: fadeUp 0.5s ease 0.1s both; }
+  .summary-card h2 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; color: var(--accent); margin-bottom: 16px; }
+  .summary-text { font-size: 15px; line-height: 1.8; color: var(--text); }
+  .section { margin-bottom: 36px; animation: fadeUp 0.5s ease both; }
+  .section-title { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .section-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; background: var(--accent-soft); }
+  .news-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 22px 26px; margin-bottom: 12px; box-shadow: 0 8px 30px rgba(61,36,15,0.04); transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+  .news-card:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .news-card.featured { border-left: 3px solid var(--accent); }
+  .news-card.featured:hover { border-color: var(--accent); }
+  .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .rank-badge { background: var(--accent); color: #fff7f0; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 6px; }
+  .emoji-icon { font-size: 18px; }
+  .card-header-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .emoji-sm { font-size: 14px; }
+  .news-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+  .journal-source { font-size: 12px; color: var(--accent); margin-bottom: 8px; opacity: 0.8; }
+  .news-card p { font-size: 13.5px; line-height: 1.75; color: var(--muted); }
+  .card-footer { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .tag { padding: 2px 9px; background: var(--accent-soft); border-radius: 999px; font-size: 11px; color: var(--accent); }
+  .news-card a { font-size: 12px; color: var(--accent); text-decoration: none; opacity: 0.7; margin-left: auto; }
+  .news-card a:hover { opacity: 1; }
+  .utility-high { color: #5a7a3a; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(90,122,58,0.1); border-radius: 4px; }
+  .utility-mid { color: #9f7a2e; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(159,122,46,0.1); border-radius: 4px; }
+  .utility-low { color: var(--muted); font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(118,100,83,0.08); border-radius: 4px; }
+  .utility-sm { font-size: 10px; }
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding: 12px; background: rgba(255,253,249,0.8); border-radius: 14px; border: 1px solid var(--line); }
+  .pico-item { display: flex; gap: 8px; align-items: baseline; }
+  .pico-label { font-size: 10px; font-weight: 700; color: #fff7f0; background: var(--accent); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; }
+  .pico-text { font-size: 12px; color: var(--muted); line-height: 1.4; }
+  .keywords-section { margin-bottom: 36px; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .keyword { padding: 5px 14px; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 20px; font-size: 12px; color: var(--accent); cursor: default; transition: background 0.2s; }
+  .keyword:hover { background: rgba(140,79,43,0.18); }
+  .topic-section { margin-bottom: 36px; }
+  .topic-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .topic-name { font-size: 13px; color: var(--muted); width: 110px; flex-shrink: 0; text-align: right; }
+  .topic-bar-bg { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 4px; transition: width 0.6s ease; }
+  .topic-count { font-size: 12px; color: var(--accent); width: 24px; }
+  .links-section { margin-top: 48px; display: flex; flex-direction: column; gap: 12px; animation: fadeUp 0.5s ease 0.4s both; }
+  .link-card { display: flex; align-items: center; gap: 14px; padding: 18px 24px; background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; text-decoration: none; color: var(--text); transition: all 0.2s; box-shadow: 0 8px 30px rgba(61,36,15,0.04); }
+  .link-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .link-icon { font-size: 28px; flex-shrink: 0; }
+  .link-name { font-size: 15px; font-weight: 700; color: var(--text); flex: 1; }
+  .link-arrow { font-size: 18px; color: var(--accent); font-weight: 700; }
+  footer { margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; animation: fadeUp 0.5s ease 0.5s both; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 600px) { .container { padding: 36px 18px 60px; } .summary-card, .news-card { padding: 20px 18px; } .pico-grid { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 6px; text-align: center; } .topic-name { width: 80px; font-size: 11px; } .links-section { gap: 8px; } .link-card { padding: 14px 18px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">🌿</div>
+    <div class="header-text">
+      <h1>Cannabis Research Daily &middot; 大麻成癮研究文獻日報</h1>
+      <div class="header-meta">
+        <span class="badge badge-date">📅 2026年6月21日</span>
+        <span class="badge badge-count">📊 29 篇文獻</span>
+        <span class="badge badge-source">Powered by PubMed + Zhipu AI</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="summary-card">
+    <h2>📋 今日文獻趨勢</h2>
+    <p class="summary-text">今日文獻以《Lancet Psychiatry》兩篇重磅綜合分析為核心，確立每日大麻使用對精神病的因果貢獻及商業化合法化與CUD增加的關聯；多篇研究揭示大麻使用在孕婦與青少年中已超越菸草，凸顯公共衛生預防策略調整的急迫性。</p>
+  </div>
+
+  <div class="section"><div class="section-title"><span class="section-icon">⭐</span>今日精選 TOP Picks</div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#1</span>
+            <span class="emoji-icon">🧠</span>
+            <span class="utility-high">高實用性</span>
+          </div>
+          <h3>大麻使用與精神疾患的關係：不同方法學研究證據的一致性評估</h3>
+          <p class="journal-source">The lancet. Psychiatry &middot; Relationships between cannabis use and mental disorders: assessing the coherence of evidence from studies with different methodologies.</p>
+          <p>整合流行病學、遺傳學、實驗與臨床前研究證據，確認每日大麻使用是精神病的 contributory cause，但對憂鬱、焦慮與自殺的因果角色較不確定。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">青少年至青年期每日使用大麻且發展為CUD者</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">每日大麻使用</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">非每日使用或非使用者</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">精神病、雙相障礙、憂鬱症、焦慮症及自殺行為的發生率、盛行率與持續性</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">精神共病</span><span class="tag">精神病</span><span class="tag">系統性回顧</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42309106/" target="_blank" rel="noopener">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#2</span>
+            <span class="emoji-icon">🏛️</span>
+            <span class="utility-high">高實用性</span>
+          </div>
+          <h3>國際大麻政策及其與大麻使用、大麻使用障礙與其他精神疾患的關聯</h3>
+          <p class="journal-source">The lancet. Psychiatry &middot; International cannabis policies and their association with cannabis use, cannabis use disorder, and other psychiatric disorders.</p>
+          <p>系統回顧2000-2025年國際大麻政策變革，發現商業化合法市場（如美國、加拿大）與成人CUD盛行率上升及大麻效價增加相關，且精神病住院率上升；限制商業化的嚴格管制模式則未出現同樣關聯。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">實施不同大麻政策（禁止、除罪化、醫療合法化、商業化合法化）的國家之一般成年人口</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">各類大麻政策變革</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">政策維持不變或不同政策類型間比較</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">大麻使用盛行率、CUD盛行率/發生率、精神疾患盛行率/發生率、精神病住院率</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">大麻政策</span><span class="tag">大麻合法化</span><span class="tag">流行病學</span><span class="tag">精神共病</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42309107/" target="_blank" rel="noopener">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#3</span>
+            <span class="emoji-icon">💊</span>
+            <span class="utility-high">高實用性</span>
+          </div>
+          <h3>中年成年人醫療與非醫療大麻使用的大麻使用障礙風險（2019-2024）</h3>
+          <p class="journal-source">Drug and alcohol dependence &middot; Cannabis use disorder risk among midlife adults reporting medical and nonmedical cannabis use, 2019-2024.</p>
+          <p>醫療大麻使用者的CUD症狀盛行率（33.8%）顯著高於非醫療使用者（22.5%），此差異完全由使用頻率解釋；但在女性與55-60歲族群里，即使控制頻率，醫療使用仍與耐受性及中重度CUD症狀獨立相關。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">美國40-60歲過去一年使用大麻的中年成年人（N=5,454）</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">醫療大麻使用</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">非醫療大麻使用</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">CUD症狀盛行率、中重度CUD症狀、11項個別CUD診斷標準</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">大麻使用障礙</span><span class="tag">流行病學</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42096992/" target="_blank" rel="noopener">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#4</span>
+            <span class="emoji-icon">🔄</span>
+            <span class="utility-high">高實用性</span>
+          </div>
+          <h3>大麻誘發首發精神病患者的功能恢復軌跡：解離症狀在症狀改善與功能結果差異中的角色</h3>
+          <p class="journal-source">Psychiatry research &middot; Functional recovery trajectories in cannabis-induced first-episode psychosis: The role of dissociative symptoms in the discrepancy between symptomatic improvement and functional outcomes.</p>
+          <p>追蹤24個月發現三種恢復軌跡，31.9%患者出現「症狀-功能脫節」（精神病症狀改善但功能無進展），基線解離症狀是軌跡歸屬的最強獨立預測因子（OR=3.24），並中介35%大麻持續使用對功能結果的影響。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">符合DSM-5大麻誘發精神病性障礙標準的首發精神病患者（N=72）</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">大麻持續使用（觀察性）</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">大麻停止使用</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">24個月GAF功能分數變化軌跡、症狀-功能脫節現象、解離症狀（DES）的中介效應</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">精神共病</span><span class="tag">精神病</span><span class="tag">大麻使用障礙</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42217403/" target="_blank" rel="noopener">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#5</span>
+            <span class="emoji-icon">🧬</span>
+            <span class="utility-mid">中實用性</span>
+          </div>
+          <h3>遺傳路徑指向大麻使用障礙與精神病關聯的潛在生物學機制</h3>
+          <p class="journal-source">Biological psychiatry global open science &middot; Genetic Pathways Point to the Biology Underlying the Association Between Cannabis Use Disorder and Psychosis.</p>
+          <p>跨疾病GWAS後設分析發現CUD與精神病存在雙向因果關係，MR-CLUST鑑別出三條異質性因果路徑，分別富集於細胞內訊號傳遞、突觸功能與神經發育路徑，而穀氨酸訊號在所有分析策略中一致顯示為關鍵機制。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">GWAS總樣本547,508人（精神分裂症+雙相I型）及EU-GEI首發精神病病例對照樣本</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">CUD遺傳風險（工具變數）</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">無CUD遺傳風險</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">精神病遺傳負荷、穀氨酸路徑多基因分數對精神病狀態的預測力、CUD至精神病的因果路徑集群</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">神經生物學</span><span class="tag">精神共病</span><span class="tag">精神病</span><span class="tag">成癮機制</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42181294/" target="_blank" rel="noopener">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#6</span>
+            <span class="emoji-icon">🤰</span>
+            <span class="utility-high">高實用性</span>
+          </div>
+          <h3>大麻在孕婦中超越菸草：美國2015-2023年全國趨勢與使用預測因子</h3>
+          <p class="journal-source">Addictive behaviors &middot; Cannabis surpasses tobacco among pregnant women: national trends and predictors of use in the U.S., 2015-2023.</p>
+          <p>分析NSDUH資料發現孕婦菸草單一使用從2015年12.0%降至2023年3.9%，但大麻單一使用在2022年達6.3%峰值，正式超越菸草；疫情後教育程度較低者與無保險者的大麻使用風險顯著升高。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">美國15-44歲孕婦（N=6,099，2015-2023年NSDUH）</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">時間趨勢（2015-2019、2020、2021-2023）</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">不同時期與不同物質（菸草單一、大麻單一、共同使用）</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">過去30天菸草單一使用、大麻單一使用與共同使用的加權盛行率及社會人口學預測因子</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">公共衛生</span><span class="tag">流行病學</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42143410/" target="_blank" rel="noopener">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#7</span>
+            <span class="emoji-icon">⚠️</span>
+            <span class="utility-high">高實用性</span>
+          </div>
+          <h3>改變的規範、改變的風險：美國青少年大麻使用超越菸草</h3>
+          <p class="journal-source">Addictive behaviors &middot; Changing Norms, Changing Risks: Adolescent Cannabis Use Surpasses Tobacco in the United States.</p>
+          <p>2015-2023年NSDUH資料顯示12-17歲青少年大麻單一使用從3.8%升至5.1%，而菸草單一使用持續下降，16-17歲族群變化最為顯著；Medicaid保險青少年在疫情後大麻使用風險顯著高於私立保險同儕。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">美國12-17歲青少年（2015-2023年NSDUH）</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">時間趨勢（2015-2019、2020、2021-2023）</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">不同時期大麻單一使用 vs 菸草單一使用 vs 共同使用</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">過去30天大麻單一使用、菸草單一使用與共同使用盛行率及社會人口學預測因子</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">青少年大麻使用</span><span class="tag">公共衛生</span><span class="tag">流行病學</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42096868/" target="_blank" rel="noopener">閱讀原文 →</a>
+          </div>
+        </div></div>
+
+  <div class="section"><div class="section-title"><span class="section-icon">📚</span>其他值得關注的文獻</div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🚻</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>大麻使用障礙與年輕成人下泌尿道症狀的關聯：全國理賠資料庫研究</h3>
+          <p class="journal-source">Urology</p>
+          <p>CUD與18-34歲男女新發下泌尿道症狀風險增加相關（男性RR=1.69，女性RR=1.81），包括排尿困難、骨盆/會陰疼痛與泌尿道感染，但與過動性膀胱無關。</p>
+          <div class="card-footer">
+            <span class="tag">大麻使用障礙</span><span class="tag">流行病學</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42314790/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">👂</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>大麻使用與耳鳴的關聯：多中心傾向分數配對世代研究</h3>
+          <p class="journal-source">OTO open</p>
+          <p>大麻相關障礙與一年內耳鳴風險增加相關（HR=1.30），且呈劑量依賴趨勢（依賴&gt;濫用&gt;使用），但5年與10年追蹤未達顯著。</p>
+          <div class="card-footer">
+            <span class="tag">流行病學</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42312243/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🏷️</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>不同年齡層對大麻使用障礙個體的污名化：與熟悉度及社會人口學特徵的關聯</h3>
+          <p class="journal-source">Harm reduction journal</p>
+          <p>青少年CUD案例比成人案例受到更多污名化，而對大麻使用與CUD越熟悉者產生的污名化歸因越少，此效應在青少年案例中更為顯著。</p>
+          <div class="card-footer">
+            <span class="tag">社會決定因素</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42304466/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🏠</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>使用居家空氣品質監測減少兒童大麻二手煙暴露：定量先導可行性研究</h3>
+          <p class="journal-source">JMIR formative research</p>
+          <p>為室內吸食大麻且有16歲以下兒童同住的家庭提供PM2.5監測器，85%參與者每日查看監測器，兒童在家時吸食大麻的天數從每週4.5天下降。</p>
+          <div class="card-footer">
+            <span class="tag">公共衛生</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42302266/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📊</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>雙相障礙合併物質使用障礙的臨床現象學：系統性回顧</h3>
+          <p class="journal-source">Bipolar disorders</p>
+          <p>CUD與雙相障礙共病時常伴隨躁狂發作增加、快速循環、精神病性症狀及較早發病；AUD則與較差的憂鬱結果及自殺風險增加相關。</p>
+          <div class="card-footer">
+            <span class="tag">精神共病</span><span class="tag">系統性回顧</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42286971/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📝</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>修訂版大麻渴求問卷簡式在社區與臨床樣本中的驗證與測量不變性</h3>
+          <p class="journal-source">Addictive behaviors</p>
+          <p>西班牙語版修訂大麻渴求問卷（MMCQ）支持單因子結構，在性別與樣本類型間具備測量不變性，與失控感、戒斷症狀正向相關，與發病年齡負向相關。</p>
+          <div class="card-footer">
+            <span class="tag">大麻渴求</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42225013/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🚬</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>大麻使用方式、菸草共用與呼吸系統及大麻使用結果的關聯</h3>
+          <p class="journal-source">Addictive behaviors</p>
+          <p>菸草共用者以燃燒式使用為主（blunt佔64.8%），燃燒式使用與菸草共用均與更嚴重的呼吸問題及更頻繁的醫療/娛樂大麻使用相關。</p>
+          <div class="card-footer">
+            <span class="tag">大麻使用障礙</span><span class="tag">流行病學</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42214299/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🧲</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>探索fMRI神經回饋降低大麻使用障礙者渴求相關腦活動：可行性研究</h3>
+          <p class="journal-source">Addictive behaviors</p>
+          <p>7T fMRI神經回饋可成功降低CUD患者前扣帶迴、後島葉與海馬迴活動，但主觀渴求評分未見改變，提示神經活動調節與主觀感受可能可分離。</p>
+          <div class="card-footer">
+            <span class="tag">大麻神經影像</span><span class="tag">大麻渴求</span><span class="tag">大麻成癮治療</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42208362/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🏪</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>大麻零售商行銷實務與州法規合規性：2025年美國5城市銷售點審計</h3>
+          <p class="journal-source">Addictive behaviors</p>
+          <p>5個州161家大麻零售商審計發現：15.5%未要求入門年齡驗證、35.4%缺少孕婦警告標示、75.8%無青少年取向包裝但有65.8%出現健康聲稱違規，各城市合規率差異極大。</p>
+          <div class="card-footer">
+            <span class="tag">大麻政策</span><span class="tag">公共衛生</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42202488/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">⚖️</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>區分有無大麻使用史者的價值決策與行為經濟學建構</h3>
+          <p class="journal-source">Journal of the experimental analysis of behavior</p>
+          <p>漂移擴散模型顯示有大麻使用史者對大麻相關刺激的證據累積速率顯著較高，而對照組則對非大麻刺激的累積速率較高，符合成癮行為經濟學的價值扭曲假說。</p>
+          <div class="card-footer">
+            <span class="tag">成癮機制</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42178170/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📄</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>大麻使用與肺癌關聯報告中方法學清晰度的缺乏</h3>
+          <p class="journal-source">Lung cancer (Amsterdam, Netherlands)</p>
+          <p>本文僅有標題，無摘要可分析，推測為方法學評論。</p>
+          <div class="card-footer">
+            <span class="tag">流行病學</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42172736/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🇹🇭</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>泰國中學生電子菸與大麻使用及易感性</h3>
+          <p class="journal-source">Public health</p>
+          <p>電子菸使用狀態與大麻易感性及使用呈強烈梯度關聯，當前電子菸使用者的當前大麻使用AOR=7.13，支持整合性學校預防策略。</p>
+          <div class="card-footer">
+            <span class="tag">青少年大麻使用</span><span class="tag">預防科學</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42143836/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📋</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>大麻減少與戒斷知覺障礙量表的心理測量評估</h3>
+          <p class="journal-source">Addictive behaviors</p>
+          <p>PBCRCS量表支持單維度結構，在性別間具備測量不變性，與大麻相關歷程及負向情感正向相關，可作為識別減少/戒斷障礙的可靠工具。</p>
+          <div class="card-footer">
+            <span class="tag">大麻戒斷</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42096870/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📈</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>休閒合法化擴張期間美國成年人物質使用潛在類別與大麻使用障礙風險</h3>
+          <p class="journal-source">Addictive behaviors</p>
+          <p>LCA鑑別出5個物質使用類別，其中「高風險CUD」類別（3.4%）在合法化擴張期間從2.6%增至5.8%，具有最高的CUD（42.1%）、AUD（82.7%）、逮捕史與自殺意念。</p>
+          <div class="card-footer">
+            <span class="tag">大麻使用障礙</span><span class="tag">大麻合法化</span><span class="tag">流行病學</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42096867/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🎓</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>青少年認為大麻比香菸、尼古丁電子菸和酒精危害小：兩項加州學校調查發現</h3>
+          <p class="journal-source">Drug and alcohol dependence</p>
+          <p>16萬名青少年調查發現僅66.8%認為每日使用大麻有害（遠低於香菸92.6%），且隨年級升高大麻危害知覺反而不升反降，與其他物質趨勢相反。</p>
+          <div class="card-footer">
+            <span class="tag">青少年大麻使用</span><span class="tag">預防科學</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42091353/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🔗</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>All of Us研究計畫中物質使用障礙的發生率與共病</h3>
+          <p class="journal-source">Drug and alcohol dependence</p>
+          <p>26.6萬人資料庫中SUD發生率為4.8%，酒精與大麻使用障礙各佔1.6%為最常見類型，74.4%的新發SUD患者至少合併一項精神健康共病。</p>
+          <div class="card-footer">
+            <span class="tag">大麻使用障礙</span><span class="tag">精神共病</span><span class="tag">流行病學</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42068725/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🔒</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>COVID-19封鎖期間親密伴侶暴力倖存者的健康路徑：混合方法研究</h3>
+          <p class="journal-source">BMC public health</p>
+          <p>IPV倖存者在封鎖期間大麻使用增加的風險是非IPV者的3.49倍，與酒精、菸草及非法物質使用增加同步出現。</p>
+          <div class="card-footer">
+            <span class="tag">社會決定因素</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42321726/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🐭</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>固醇載體蛋白2缺失減少焦慮並增強恐懼消退</h3>
+          <p class="journal-source">Journal of affective disorders</p>
+          <p>SCP-2/X剔除小鼠表現增強的恐懼消退與降低的焦慮行為，此效應可被CB1受體拮抗劑消除，且足震後24小時杏仁核與前額葉皮質2-AG濃度顯著升高。</p>
+          <div class="card-footer">
+            <span class="tag">神經生物學</span><span class="tag">內源性大麻素</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42314784/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🧑</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>澳洲接受住院物質使用戒斷服務青少年的 personality 功能與反社會性</h3>
+          <p class="journal-source">Drug and alcohol review</p>
+          <p>100名18-25歲住院戒斷青少年中48%符合可能的人格障礙閾值、43%符合反社會人格障礙標準，兩者均與多重物質使用相關，ASPd特別與CUD顯著相關。</p>
+          <div class="card-footer">
+            <span class="tag">青少年大麻使用</span><span class="tag">精神共病</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42309507/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📰</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>大麻使用、管制與精神疾病</h3>
+          <p class="journal-source">The lancet. Psychiatry</p>
+          <p>本文僅有標題，無摘要可分析，推測為Lancet Psychiatry同期刊載之社論或綜述。</p>
+          <div class="card-footer">
+            <span class="tag">大麻政策</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42309099/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📉</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>兩個大型治療樣本中物質使用嚴重度、共病與衝動性的年齡與性別差異之高解析度臨床特徵描繪</h3>
+          <p class="journal-source">Substance use &amp; misuse</p>
+          <p>3,017名SUD治療患者中，年輕成人（17-25歲）有大麻與其他藥物使用較高、精神症狀較多、共病較高及衝動性較高但改變動機較低的特徵。</p>
+          <div class="card-footer">
+            <span class="tag">大麻使用障礙</span><span class="tag">流行病學</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42294955/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">✏️</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>勘誤：「探索大麻電子菸產品使用的年齡與性別差異：來自2020-2023年加拿大大麻調查的結果」</h3>
+          <p class="journal-source">Drug and alcohol review</p>
+          <p>本文為勘誤通知，無新研究內容。</p>
+          <div class="card-footer">
+            <span class="tag">流行病學</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42216295/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div></div>
+
+  <div class="topic-section section"><div class="section-title"><span class="section-icon">📊</span>主題分佈</div>
+            <div class="topic-row">
+              <span class="topic-name">大麻使用障礙</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:64%"></div></div>
+              <span class="topic-count">7</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">精神共病</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:45%"></div></div>
+              <span class="topic-count">5</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">流行病學</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div>
+              <span class="topic-count">11</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">青少年大麻使用</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:45%"></div></div>
+              <span class="topic-count">5</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">大麻政策</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:36%"></div></div>
+              <span class="topic-count">4</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">公共衛生</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:45%"></div></div>
+              <span class="topic-count">5</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">大麻合法化</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:18%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">神經生物學</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:18%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">精神病</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:27%"></div></div>
+              <span class="topic-count">3</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">大麻渴求</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:18%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">大麻戒斷</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:9%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">大麻成癮治療</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:9%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">大麻神經影像</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:9%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">系統性回顧</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:18%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">預防科學</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:18%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">社會決定因素</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:18%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">內源性大麻素</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:9%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">成癮機制</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:18%"></div></div>
+              <span class="topic-count">2</span>
+            </div></div>
+
+  <div class="keywords-section section"><div class="section-title"><span class="section-icon">🏷️</span>關鍵字</div><div class="keywords"><span class="keyword">大麻政策影響</span><span class="keyword">精神病因果關係</span><span class="keyword">醫療大麻風險</span><span class="keyword">青少年預防</span><span class="keyword">孕婦篩檢</span><span class="keyword">解離症狀</span><span class="keyword">穀氨酸機制</span></div></div>
+
+  <div class="links-section">
+    <a href="https://www.leepsyclinic.com/" class="link-card" target="_blank" rel="noopener">
+      <span class="link-icon">🏥</span>
+      <span class="link-name">李政洋身心診所首頁</span>
+      <span class="link-arrow">→</span>
+    </a>
+    <a href="https://blog.leepsyclinic.com/" class="link-card" target="_blank" rel="noopener">
+      <span class="link-icon">📬</span>
+      <span class="link-name">訂閱電子報</span>
+      <span class="link-arrow">→</span>
+    </a>
+    <a href="https://buymeacoffee.com/CYlee" class="link-card" target="_blank" rel="noopener">
+      <span class="link-icon">☕</span>
+      <span class="link-name">Buy Me a Coffee</span>
+      <span class="link-arrow">→</span>
+    </a>
+  </div>
+
+  <footer>
+    <span>資料來源：PubMed &middot; 分析模型：GLM-5-Turbo</span>
+    <span><a href="https://github.com/u8901006/marijuna-addiction">GitHub</a></span>
+  </footer>
+</div>
+</body>
+</html>
