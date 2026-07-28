@@ -93,7 +93,7 @@ ${links}
   </div>
 
   <footer>
-    <p>Powered by PubMed + Zhipu AI · <a href="https://github.com/u8901006/marijuna-addiction">GitHub</a></p>
+    <p>Powered by PubMed + NVIDIA Nemotron · <a href="https://github.com/u8901006/marijuna-addiction">GitHub</a></p>
   </footer>
 </div>
 </body>

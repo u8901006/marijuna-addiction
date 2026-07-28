@@ -2,9 +2,9 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 'node:fs';
 import { resolve, join } from 'node:path';
 
-const API_BASE = process.env.ZHIPU_API_BASE || 'https://open.bigmodel.cn/api/coding/paas/v4';
-const MODELS = ['glm-5-turbo', 'glm-4.7', 'glm-4.7-flash'];
-const MAX_TOKENS = 50000;
+const API_BASE = process.env.NVIDIA_API_BASE || 'https://integrate.api.nvidia.com/v1';
+const MODELS = ['nvidia/nemotron-3-super-120b-a12b', 'nvidia/nemotron-3-nano-30b-a3b'];
+const MAX_TOKENS = 16384;
 const API_TIMEOUT = 480000;
 const MAX_RETRIES = 3;
 
@@ -97,7 +97,7 @@ function robustJsonParse(text) {
   return null;
 }
 
-async function callZhipuAPI(apiKey, papersData) {
+async function callNvidiaAPI(apiKey, papersData) {
   const dateStr = papersData.date || new Date().toISOString().slice(0, 10);
   const count = papersData.count || 0;
   const safePapers = (papersData.papers || []).map(p => ({
@@ -178,9 +178,11 @@ ${papersText}
             { role: 'system', content: SYSTEM_PROMPT },
             { role: 'user', content: userPrompt },
           ],
-          temperature: 0.3,
-          top_p: 0.9,
+          temperature: 1.0,
+          top_p: 0.95,
           max_tokens: MAX_TOKENS,
+          stream: false,
+          chat_template_kwargs: { enable_thinking: false },
         };
 
         const resp = await fetch(`${API_BASE}/chat/completions`, {
@@ -402,7 +404,7 @@ function generateHtml(analysis, dateStr) {
       <div class="header-meta">
         <span class="badge badge-date">📅 ${dateDisplay}</span>
         <span class="badge badge-count">📊 ${totalCount} 篇文獻</span>
-        <span class="badge badge-source">Powered by PubMed + Zhipu AI</span>
+        <span class="badge badge-source">Powered by PubMed + NVIDIA Nemotron</span>
       </div>
     </div>
   </header>
@@ -439,7 +441,7 @@ function generateHtml(analysis, dateStr) {
   </div>
 
   <footer>
-    <span>資料來源：PubMed &middot; 分析模型：GLM-5-Turbo</span>
+    <span>資料來源：PubMed &middot; 分析模型：${analysis._model || MODELS[0]}</span>
     <span><a href="https://github.com/u8901006/marijuna-addiction">GitHub</a></span>
   </footer>
 </div>
@@ -449,9 +451,9 @@ function generateHtml(analysis, dateStr) {
 
 async function main() {
   const opts = parseArgs();
-  const apiKey = process.env.ZHIPU_API_KEY || '';
+  const apiKey = process.env.NVIDIA_API_KEY || '';
   if (!apiKey) {
-    console.error('[ERROR] ZHIPU_API_KEY environment variable is required');
+    console.error('[ERROR] NVIDIA_API_KEY environment variable is required');
     process.exit(1);
   }
 
@@ -480,7 +482,7 @@ async function main() {
     return;
   }
 
-  const analysis = await callZhipuAPI(apiKey, papersData);
+  const analysis = await callNvidiaAPI(apiKey, papersData);
   if (!analysis) {
     console.error('[ERROR] AI analysis failed');
     process.exit(1);
