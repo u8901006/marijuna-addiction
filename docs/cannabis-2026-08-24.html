@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cannabis Research Daily &middot; 大麻成癮研究文獻日報 &middot; 2026年8月24日</title>
+<meta name="description" content="2026年8月24日 大麻成癮（Cannabis Use Disorder）研究文獻日報，由 AI 自動彙整 PubMed 最新論文"/>
+<style>
+  :root { --bg: #f6f1e8; --surface: #fffaf2; --line: #d8c5ab; --text: #2b2118; --muted: #766453; --accent: #8c4f2b; --accent-soft: #ead2bf; --card-bg: color-mix(in srgb, var(--surface) 92%, white); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%); color: var(--text); font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
+  .container { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 60px 32px 80px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 52px; animation: fadeDown 0.6s ease both; }
+  .logo { width: 48px; height: 48px; border-radius: 14px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 4px 20px rgba(140,79,43,0.25); }
+  .header-text h1 { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+  .header-meta { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; letter-spacing: 0.3px; }
+  .badge-date { background: var(--accent-soft); border: 1px solid var(--line); color: var(--accent); }
+  .badge-count { background: rgba(140,79,43,0.06); border: 1px solid var(--line); color: var(--muted); }
+  .badge-source { background: transparent; color: var(--muted); font-size: 11px; padding: 0 4px; }
+  .summary-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 20px 60px rgba(61,36,15,0.06); animation: fadeUp 0.5s ease 0.1s both; }
+  .summary-card h2 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; color: var(--accent); margin-bottom: 16px; }
+  .summary-text { font-size: 15px; line-height: 1.8; color: var(--text); }
+  .section { margin-bottom: 36px; animation: fadeUp 0.5s ease both; }
+  .section-title { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .section-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; background: var(--accent-soft); }
+  .news-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 22px 26px; margin-bottom: 12px; box-shadow: 0 8px 30px rgba(61,36,15,0.04); transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+  .news-card:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .news-card.featured { border-left: 3px solid var(--accent); }
+  .news-card.featured:hover { border-color: var(--accent); }
+  .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .rank-badge { background: var(--accent); color: #fff7f0; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 6px; }
+  .emoji-icon { font-size: 18px; }
+  .card-header-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .emoji-sm { font-size: 14px; }
+  .news-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+  .journal-source { font-size: 12px; color: var(--accent); margin-bottom: 8px; opacity: 0.8; }
+  .news-card p { font-size: 13.5px; line-height: 1.75; color: var(--muted); }
+  .card-footer { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .tag { padding: 2px 9px; background: var(--accent-soft); border-radius: 999px; font-size: 11px; color: var(--accent); }
+  .news-card a { font-size: 12px; color: var(--accent); text-decoration: none; opacity: 0.7; margin-left: auto; }
+  .news-card a:hover { opacity: 1; }
+  .utility-high { color: #5a7a3a; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(90,122,58,0.1); border-radius: 4px; }
+  .utility-mid { color: #9f7a2e; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(159,122,46,0.1); border-radius: 4px; }
+  .utility-low { color: var(--muted); font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(118,100,83,0.08); border-radius: 4px; }
+  .utility-sm { font-size: 10px; }
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding: 12px; background: rgba(255,253,249,0.8); border-radius: 14px; border: 1px solid var(--line); }
+  .pico-item { display: flex; gap: 8px; align-items: baseline; }
+  .pico-label { font-size: 10px; font-weight: 700; color: #fff7f0; background: var(--accent); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; }
+  .pico-text { font-size: 12px; color: var(--muted); line-height: 1.4; }
+  .keywords-section { margin-bottom: 36px; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .keyword { padding: 5px 14px; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 20px; font-size: 12px; color: var(--accent); cursor: default; transition: background 0.2s; }
+  .keyword:hover { background: rgba(140,79,43,0.18); }
+  .topic-section { margin-bottom: 36px; }
+  .topic-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .topic-name { font-size: 13px; color: var(--muted); width: 110px; flex-shrink: 0; text-align: right; }
+  .topic-bar-bg { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 4px; transition: width 0.6s ease; }
+  .topic-count { font-size: 12px; color: var(--accent); width: 24px; }
+  .links-section { margin-top: 48px; display: flex; flex-direction: column; gap: 12px; animation: fadeUp 0.5s ease 0.4s both; }
+  .link-card { display: flex; align-items: center; gap: 14px; padding: 18px 24px; background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; text-decoration: none; color: var(--text); transition: all 0.2s; box-shadow: 0 8px 30px rgba(61,36,15,0.04); }
+  .link-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .link-icon { font-size: 28px; flex-shrink: 0; }
+  .link-name { font-size: 15px; font-weight: 700; color: var(--text); flex: 1; }
+  .link-arrow { font-size: 18px; color: var(--accent); font-weight: 700; }
+  footer { margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; animation: fadeUp 0.5s ease 0.5s both; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 600px) { .container { padding: 36px 18px 60px; } .summary-card, .news-card { padding: 20px 18px; } .pico-grid { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 6px; text-align: center; } .topic-name { width: 80px; font-size: 11px; } .links-section { gap: 8px; } .link-card { padding: 14px 18px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">🌿</div>
+    <div class="header-text">
+      <h1>Cannabis Research Daily &middot; 大麻成癮研究文獻日報</h1>
+      <div class="header-meta">
+        <span class="badge badge-date">📅 2026年8月24日</span>
+        <span class="badge badge-count">📊 6 篇文獻</span>
+        <span class="badge badge-source">Powered by PubMed + NVIDIA Nemotron</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="summary-card">
+    <h2>📋 今日文獻趨勢</h2>
+    <p class="summary-text">今日文獻呈現多元聚焦：從大麻使用障礙流行病學趨勢（尤其是中國數據）到醫療大麻使用者的風險篩檢工具校正、年輕人使用動機與人格特質的關聯，以及大麻與睪丸腫瘤的潛在關聯。臨床意義方面，強調人群特定篩檢工具的必要性與長期健康風險評估，預防與早期干預為主軸。</p>
+  </div>
+
+  <div class="section"><div class="section-title"><span class="section-icon">⭐</span>今日精選 TOP Picks</div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#1</span>
+            <span class="emoji-icon">🔍</span>
+            <span class="utility-high">高實用性</span>
+          </div>
+          <h3>美國慢性疼痛退伍軍人使用醫療大麻時，ASSIST 中度風險門檻的驗證與調整建議</h3>
+          <p class="journal-source">Substance use &amp; misuse &middot; Examining the Alcohol, Smoking and Substance Involvement Screening Test (ASSIST) Moderate Risk Cannabis Use Threshold Among a Sample of U.S. Military Veterans with Chronic Pain Who Report Medical Cannabis Use.</p>
+          <p>研究發現現行 ASSIST 大麻使用風險門檻（分數 4）在醫療大麻使用者中表現不佳，建議調整為 6（篩檢）或 7（監測）以提高敏感度與效度，凸顯需開發人群特定篩檢工具。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">501 名報告使用醫療大麻且接受長期阿片類治療的美國軍事退伍軍人</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">使用 ASSIST 進行大麻風險篩檢</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">以 CUDIT-R 為金標準比較不同 ASSIST 分數切點的表現</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">分數 6 提供最高敏感度（94.7%），分數 7 提供最高 AUC（66.2%），現行切點 4 的 AUC 僅 52.8%</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">大麻使用障礙</span><span class="tag">公共衛生</span><span class="tag">預防科學</span><span class="tag">精神共病</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42633571/" target="_blank" rel="noopener">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#2</span>
+            <span class="emoji-icon">📊</span>
+            <span class="utility-mid">中實用性</span>
+          </div>
+          <h3>中國藥物使用障礙負担趨勢分析：1990–2023 年大麻使用障礙相對穩定，而其他類藥物呈下降</h3>
+          <p class="journal-source">Substance use &amp; misuse &middot; Analysis and Prediction Study on the Burden of Drug Use Disorders in China from 1990 to 2023: A Systematic Analysis From the Global Burden of Disease Study 2023.</p>
+          <p>2023 年中國大麻使用障礙（CAD）罹患率為 4.22/10 萬，近三十年負担相對穩定，顯著低於其他藥物類型，但男性與青壯年負担較高，提醒需持續監控與預防。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">1990–2023 年中國全人口，按性別與年齡層分層</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無（觀察性趨勢分析）</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">各藥物使用障礙類型（AMD, COD, CAD, OPD, OTD）之負担趨勢</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">CAD 負担在 1990–2023 年間相對穩定，而其他類藥物呈下降趨勢；男性負顯著高於女性；隨年齡增加，罹患率下降</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">大麻使用障礙</span><span class="tag">流行病學</span><span class="tag">公共衛生</span><span class="tag">預防科學</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42633575/" target="_blank" rel="noopener">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#3</span>
+            <span class="emoji-icon">🧠</span>
+            <span class="utility-mid">中實用性</span>
+          </div>
+          <h3>感覺處理敏感度與年輕人使用大馬士各動機的關聯：非應對導向，而是社會與擴增動機為主</h3>
+          <p class="journal-source">Addictive behaviors &middot; Associations of sensory processing sensitivity with cannabis motives and consumption in young adults.</p>
+          <p>感覺處理敏感度（SPS）與使用頻率或濫用症狀無關，但顯著關聯社會、應對與擴增動機，提示高敏感者可能透過大麻調節社會體驗或增強感知，而非單純緩解不適。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">195 名來自魁北克的 23 歲青年成人</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">測量感覺處理敏感度（SPS）及其子維度</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">大麻使用頻率、濫用症狀（CUDIT-R）及使用動機（MCQ）</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">SPS 與使用頻率及濫用無關，但與社會、應對、擴增動機顯著正相關；低感覺門檻與社會/從眾動機相關，審美敏感度與增強/擴增動機相關</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">大麻使用障礙</span><span class="tag">動機式訪談</span><span class="tag">神經生物學</span><span class="tag">青少年大麻使用</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42632332/" target="_blank" rel="noopener">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#4</span>
+            <span class="emoji-icon">⚠️</span>
+            <span class="utility-mid">中實用性</span>
+          </div>
+          <h3>法國全國性研究：早 adulthood 日常使用大麻與睪丸生殖細胞腫瘤（特別是精原細胞瘤）風險增加相關</h3>
+          <p class="journal-source">European journal of cancer (Oxford, England : 1990) &middot; Cannabis use and testicular germ cell tumour subtypes in the french nationwide TESTIS case-control study.</p>
+          <p>早 adulthood（12–25 歲）每日使用大麻與 TGCT 總體風險增加 50%（OR=1.50），精原細胞瘤風險增加近一倍（OR≈2.0），呈現劑量反應關聯，提醒青少年及 giovani成人使用風險。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">454 例 TGCT 病例及 670 名對照組（法國全國性醫院案對照研究）</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">青春期與早 adulthood 大麻使用（時間、頻率、持續性）</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">無大麻使用者</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">早 adulthood 日常使用：TGCT OR=1.50，精原細胞瘤 OR=2.02；12–25 歲週累積使用：TGCT OR=1.85；青春期使用無顯著關聯</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">大麻使用障礙</span><span class="tag">公共衛生</span><span class="tag">預防科學</span><span class="tag">青少年大麻使用</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42447513/" target="_blank" rel="noopener">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#5</span>
+            <span class="emoji-icon">📦</span>
+            <span class="utility-mid">中實用性</span>
+          </div>
+          <h3>大麻菸品包裝與標籤研究：跨部門合作揭露現行法規未能阻止青少年吸引設計</h3>
+          <p class="journal-source">Substance use &amp; misuse &middot; Building and Sustaining Cross-Sector Collaboration: A Commentary on Cannabis Packaging and Labeling Research, Policy, and Coordination.</p>
+          <p>華盛頓州跨部門合作發現，符合現行法規的大麻產品包裝設計仍具青少年吸引力，凸顯法規與公共衛生保護間的落差，呼籲以證據為基礎修訂標準。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">大麻消費者（焦點於青少年）</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">跨部門合作（公共衛生、學術、監管機構）開展包裝與標籤研究</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">現行州法規 vs. 公共衛生理想標準</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">現行合規設計仍含青少年吸引元素（如顏色、圖樣），協作促成初步政策框架發展</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">大麻政策</span><span class="tag">大麻合法化</span><span class="tag">公共衛生</span><span class="tag">預防科學</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42633578/" target="_blank" rel="noopener">閱讀原文 →</a>
+          </div>
+        </div></div>
+
+  <div class="section"><div class="section-title"><span class="section-icon">📚</span>其他值得關注的文獻</div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🧪</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>大麻急性應激反應的多模態實驗研究：高劑量THC減少皮質醇與電皮反應但增加心率，主觀緩解感可能來自預期效應</h3>
+          <p class="journal-source">Neuropsychopharmacology : official publication of the American College of Neuropsychopharmacology</p>
+          <p>高劑量 THC (40 mg) 顯著降低皮質醇與電導反應，但增加心率；主觀壓力下降與安慰劑無異，提示緩解感可能主要來自預期而非藥理作用。</p>
+          <div class="card-footer">
+            <span class="tag">神經生物學</span><span class="tag">內源性大麻素</span><span class="tag">壓力與應對</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42632818/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div></div>
+
+  <div class="topic-section section"><div class="section-title"><span class="section-icon">📊</span>主題分佈</div>
+            <div class="topic-row">
+              <span class="topic-name">大麻使用障礙</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div>
+              <span class="topic-count">5</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">公共衛生</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:80%"></div></div>
+              <span class="topic-count">4</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">預防科學</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:80%"></div></div>
+              <span class="topic-count">4</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">青少年大麻使用</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:60%"></div></div>
+              <span class="topic-count">3</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">神經生物學</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:40%"></div></div>
+              <span class="topic-count">2</span>
+            </div></div>
+
+  <div class="keywords-section section"><div class="section-title"><span class="section-icon">🏷️</span>關鍵字</div><div class="keywords"><span class="keyword">大麻使用障礙</span><span class="keyword">醫療大麻</span><span class="keyword">風險篩檢</span><span class="keyword">青少年使用</span><span class="keyword">公共衛生</span><span class="keyword">預防科學</span><span class="keyword">睪丸腫瘤</span><span class="keyword">感覺處理敏感度</span><span class="keyword">包裝政策</span><span class="keyword">應激反應</span></div></div>
+
+  <div class="links-section">
+    <a href="https://www.leepsyclinic.com/" class="link-card" target="_blank" rel="noopener">
+      <span class="link-icon">🏥</span>
+      <span class="link-name">李政洋身心診所首頁</span>
+      <span class="link-arrow">→</span>
+    </a>
+    <a href="https://blog.leepsyclinic.com/" class="link-card" target="_blank" rel="noopener">
+      <span class="link-icon">📬</span>
+      <span class="link-name">訂閱電子報</span>
+      <span class="link-arrow">→</span>
+    </a>
+    <a href="https://buymeacoffee.com/CYlee" class="link-card" target="_blank" rel="noopener">
+      <span class="link-icon">☕</span>
+      <span class="link-name">Buy Me a Coffee</span>
+      <span class="link-arrow">→</span>
+    </a>
+  </div>
+
+  <footer>
+    <span>資料來源：PubMed &middot; 分析模型：nvidia/nemotron-3-super-120b-a12b</span>
+    <span><a href="https://github.com/u8901006/marijuna-addiction">GitHub</a></span>
+  </footer>
+</div>
+</body>
+</html>
