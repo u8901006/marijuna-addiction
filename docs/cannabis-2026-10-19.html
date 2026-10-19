@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cannabis Research Daily &middot; 大麻成癮研究文獻日報 &middot; 2026年10月19日</title>
+<meta name="description" content="2026年10月19日 大麻成癮（Cannabis Use Disorder）研究文獻日報，由 AI 自動彙整 PubMed 最新論文"/>
+<style>
+  :root { --bg: #f6f1e8; --surface: #fffaf2; --line: #d8c5ab; --text: #2b2118; --muted: #766453; --accent: #8c4f2b; --accent-soft: #ead2bf; --card-bg: color-mix(in srgb, var(--surface) 92%, white); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%); color: var(--text); font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
+  .container { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 60px 32px 80px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 52px; animation: fadeDown 0.6s ease both; }
+  .logo { width: 48px; height: 48px; border-radius: 14px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 4px 20px rgba(140,79,43,0.25); }
+  .header-text h1 { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+  .header-meta { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; letter-spacing: 0.3px; }
+  .badge-date { background: var(--accent-soft); border: 1px solid var(--line); color: var(--accent); }
+  .badge-count { background: rgba(140,79,43,0.06); border: 1px solid var(--line); color: var(--muted); }
+  .badge-source { background: transparent; color: var(--muted); font-size: 11px; padding: 0 4px; }
+  .summary-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 20px 60px rgba(61,36,15,0.06); animation: fadeUp 0.5s ease 0.1s both; }
+  .summary-card h2 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; color: var(--accent); margin-bottom: 16px; }
+  .summary-text { font-size: 15px; line-height: 1.8; color: var(--text); }
+  .section { margin-bottom: 36px; animation: fadeUp 0.5s ease both; }
+  .section-title { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .section-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; background: var(--accent-soft); }
+  .news-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 22px 26px; margin-bottom: 12px; box-shadow: 0 8px 30px rgba(61,36,15,0.04); transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+  .news-card:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .news-card.featured { border-left: 3px solid var(--accent); }
+  .news-card.featured:hover { border-color: var(--accent); }
+  .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .rank-badge { background: var(--accent); color: #fff7f0; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 6px; }
+  .emoji-icon { font-size: 18px; }
+  .card-header-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .emoji-sm { font-size: 14px; }
+  .news-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+  .journal-source { font-size: 12px; color: var(--accent); margin-bottom: 8px; opacity: 0.8; }
+  .news-card p { font-size: 13.5px; line-height: 1.75; color: var(--muted); }
+  .card-footer { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .tag { padding: 2px 9px; background: var(--accent-soft); border-radius: 999px; font-size: 11px; color: var(--accent); }
+  .news-card a { font-size: 12px; color: var(--accent); text-decoration: none; opacity: 0.7; margin-left: auto; }
+  .news-card a:hover { opacity: 1; }
+  .utility-high { color: #5a7a3a; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(90,122,58,0.1); border-radius: 4px; }
+  .utility-mid { color: #9f7a2e; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(159,122,46,0.1); border-radius: 4px; }
+  .utility-low { color: var(--muted); font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(118,100,83,0.08); border-radius: 4px; }
+  .utility-sm { font-size: 10px; }
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding: 12px; background: rgba(255,253,249,0.8); border-radius: 14px; border: 1px solid var(--line); }
+  .pico-item { display: flex; gap: 8px; align-items: baseline; }
+  .pico-label { font-size: 10px; font-weight: 700; color: #fff7f0; background: var(--accent); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; }
+  .pico-text { font-size: 12px; color: var(--muted); line-height: 1.4; }
+  .keywords-section { margin-bottom: 36px; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .keyword { padding: 5px 14px; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 20px; font-size: 12px; color: var(--accent); cursor: default; transition: background 0.2s; }
+  .keyword:hover { background: rgba(140,79,43,0.18); }
+  .topic-section { margin-bottom: 36px; }
+  .topic-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .topic-name { font-size: 13px; color: var(--muted); width: 110px; flex-shrink: 0; text-align: right; }
+  .topic-bar-bg { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 4px; transition: width 0.6s ease; }
+  .topic-count { font-size: 12px; color: var(--accent); width: 24px; }
+  .links-section { margin-top: 48px; display: flex; flex-direction: column; gap: 12px; animation: fadeUp 0.5s ease 0.4s both; }
+  .link-card { display: flex; align-items: center; gap: 14px; padding: 18px 24px; background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; text-decoration: none; color: var(--text); transition: all 0.2s; box-shadow: 0 8px 30px rgba(61,36,15,0.04); }
+  .link-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .link-icon { font-size: 28px; flex-shrink: 0; }
+  .link-name { font-size: 15px; font-weight: 700; color: var(--text); flex: 1; }
+  .link-arrow { font-size: 18px; color: var(--accent); font-weight: 700; }
+  footer { margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; animation: fadeUp 0.5s ease 0.5s both; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 600px) { .container { padding: 36px 18px 60px; } .summary-card, .news-card { padding: 20px 18px; } .pico-grid { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 6px; text-align: center; } .topic-name { width: 80px; font-size: 11px; } .links-section { gap: 8px; } .link-card { padding: 14px 18px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">🌿</div>
+    <div class="header-text">
+      <h1>Cannabis Research Daily &middot; 大麻成癮研究文獻日報</h1>
+      <div class="header-meta">
+        <span class="badge badge-date">📅 2026年10月19日</span>
+        <span class="badge badge-count">📊 10 篇文獻</span>
+        <span class="badge badge-source">Powered by PubMed + NVIDIA Nemotron</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="summary-card">
+    <h2>📋 今日文獻趨勢</h2>
+    <p class="summary-text">今日文獻聚焦於大麻使用障礙的政策創新（如伊朗的條件去醫療化模型）、注意偏見測量方法論優化、青少年大麻使用對神經報酬系統的影響，以及合成大麻素對thalamo-prefrontal神經振盪的干擾，顯示出從臨床政策到基礎神經科學的多層次研究趨勢。</p>
+  </div>
+
+  <div class="section"><div class="section-title"><span class="section-icon">⭐</span>今日精選 TOP Picks</div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#1</span>
+            <span class="emoji-icon">🏛️</span>
+            <span class="utility-high">高實用性</span>
+          </div>
+          <h3>伊朗大麻使用障礙的條件去醫療化政策路徑：基於臨床專家的政策建議</h3>
+          <p class="journal-source">Health policy OPEN &middot; From prohibition to conditional demedicalization: a clinician-informed policy pathway for cannabis use disorder in Iran.</p>
+          <p>提出一個在全面禁止背景下，將輕度至中度大麻使用障礙重新框架為 psychosocial 問題、擴大非藥物治療並設定可逆試點與停止規則的政策模型，強調減傷而非純藥物干預。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">伊朗精神科醫師（質性研究）</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">條件去醫療化試點模型（含非刑事化、 psychosocial 服務擴增、預防盾、跨部門治理）</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">現行全面禁止與醫療化模式</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">降低治療門檻、提升服務可及性、建構可測試的減傷政策假設</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">大麻政策</span><span class="tag">公共衛生</span><span class="tag">減傷</span><span class="tag">條件管理</span><span class="tag">青少年預防</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42889659/" target="_blank" rel="noopener">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#2</span>
+            <span class="emoji-icon">👁️</span>
+            <span class="utility-high">高實用性</span>
+          </div>
+          <h3>眼動追蹤任務較點探測任務更敏感於偵測大麻使用者的注意偏見</h3>
+          <p class="journal-source">Addictive behaviors &middot; Comparison of visual tasks for assessing attentional bias in cannabis users and non-users.</p>
+          <p>眼動追蹤（EM）和滑鼠停留時間（MV）任務能有效偵測大麻使用者注意偏見，尤其是伴隨使用嚴重度，而傳統點探測任務（DP）敏感度不足。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">31 名參與者（16 名大麻使用者，15 名非使用者）</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">三種注意偏見測量任務：點探測（DP）、眼動追蹤（EM）、MouseView.js（MV）</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">使用者 vs 非使用者；不同任務間敏感度比較</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">EM 和 MV 顯著偵測到注意偏見與使用嚴重度互動；DP 無顯著效應</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">大麻渴求</span><span class="tag">神經生物學</span><span class="tag">認知行為治療</span><span class="tag">評估工具</span><span class="tag">注意偏見</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42892210/" target="_blank" rel="noopener">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#3</span>
+            <span class="emoji-icon">🧠</span>
+            <span class="utility-high">高實用性</span>
+          </div>
+          <h3>青少年期開始定期使用大麻與金錢獎賞處理中的神經與行為異常相關</h3>
+          <p class="journal-source">Psychopharmacology &middot; Adolescent-onset regular cannabis use is associated with altered neural and behavioural responses during anticipation and feedback of monetary reward and loss.</p>
+          <p>青少年期定期使用大麻者在金錢激延遲任務中表現出中邊緣皮質系統活動異常，伴隨行為表現受損與腦-行為耦合中斷，提示早期使用可能損傷獎賞處理核心迴路。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">20 名青少年期開始定期使用大麻者（≥4天/week，2年，&lt;18歲開始） vs 20 名匹配非使用者</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">功能性磁振造影（fMRI）中進行金錢激延遲任務（MIDT）</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">大麻使用組 vs 非使用組；獎賞 vs 損失預期與結果階段</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">使用組在勝獎預期時紋帶下降、損失預期時腹紋帶與前極增強；行為表現變差；腦-行為耦合中斷</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">青少年大麻使用</span><span class="tag">大麻神經影像</span><span class="tag">獎賞處理</span><span class="tag">內源性大麻素</span><span class="tag">精神共病</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42891834/" target="_blank" rel="noopener">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#4</span>
+            <span class="emoji-icon">⚡</span>
+            <span class="utility-mid">中實用性</span>
+          </div>
+          <h3>合成大麻素擾亂視丘-前額葉 gamma 同步性並增加高電壓紡錘波，可能損傷感觉閘門與認知整合</h3>
+          <p class="journal-source">Psychopharmacology &middot; Synthetic cannabinoid-induced changes in thalamo-prefrontal gamma synchrony and thalamic high-voltage spindles.</p>
+          <p>合成大麻素 5F-EDMB-PICA 在鼠模型中降低前額葉與視丘局部 gamma 波，但增強長距離 gamma 同步性並增加視丘高電壓紡錘波，顯示thalamo-prefrontal迴路的振盪脫節，可能導致認知與感觉處理失調。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">自由移動大鼠</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">急性腹腔注射強效合成大麻素 5F-EDMB-PICA (0.3 mg/kg)</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">給藥前 vs 給藥後；局部 vs 長距離振盪；gamma vs 高電壓紡錘波</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">局部 gamma 功率下降，長距離 gamma 同步性增加；高電壓紡錘波（HVS）增加；HVS/theta 前項與前額葉 gamma 後項耦合增強</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">合成大麻素</span><span class="tag">神經生物學</span><span class="tag">內源性大麻素</span><span class="tag">精神病</span><span class="tag">認知障礙</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42891833/" target="_blank" rel="noopener">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#5</span>
+            <span class="emoji-icon">🧘</span>
+            <span class="utility-mid">中實用性</span>
+          </div>
+          <h3>冥想結合酒精使用與提升幸福感相關，但其他藥物單獨使用則降低幸福感</h3>
+          <p class="journal-source">Psychopharmacology &middot; Beyond psychedelic exceptionalism: how people combine meditation with psychoactive substances, and how this relates to well-being.</p>
+          <p>酒精、大麻、尼古丁比經典致幻藥更常與冥想共用；僅酒精結合冥想顯著提升幸福感，其他藥物單獨使用降低幸福感，而結合冥想則減緩此負面影響。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">廣泛自然樣本 (N=1,391) 及聚焦樣本 (n=397，聚焦於致幻藥與大麻使用者)</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">自我報告冥想與精神活性物質共用情況</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">單獨使用藥物 vs 藥物+冥想；不同物質類別</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">酒精+冥想 → 提升幸福感；其他藥物單獨使用 → 降低幸福感；其他藥物+冥想 → 無顯著不良影響</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">冥想</span><span class="tag">多藥物使用</span><span class="tag">幸福感</span><span class="tag">酒精使用</span><span class="tag">心理彈性</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42891832/" target="_blank" rel="noopener">閱讀原文 →</a>
+          </div>
+        </div></div>
+
+  <div class="section"><div class="section-title"><span class="section-icon">📚</span>其他值得關注的文獻</div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🏛️</span>
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>伊朗大麻使用障礙的條件去醫療化政策路徑：基於臨床專家的政策建議</h3>
+          <p class="journal-source">Health policy OPEN</p>
+          <p>提出一個在全面禁止背景下，將輕度至中度大麻使用障礙重新框架為 psychosocial 問題、擴大非藥物治療並設定可逆試點與停止規則的政策模型，強調減傷而非純藥物干預。</p>
+          <div class="card-footer">
+            <span class="tag">大麻政策</span><span class="tag">公共衛生</span><span class="tag">減傷</span><span class="tag">條件管理</span><span class="tag">青少年預防</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42889659/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">👁️</span>
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>眼動追蹤任務較點探測任務更敏感於偵測大麻使用者的注意偏見</h3>
+          <p class="journal-source">Addictive behaviors</p>
+          <p>眼動追蹤（EM）和滑鼠停留時間（MV）任務能有效偵測大麻使用者注意偏見，尤其是伴隨使用嚴重度，而傳統點探測任務（DP）敏感度不足。</p>
+          <div class="card-footer">
+            <span class="tag">大麻渴求</span><span class="tag">神經生物學</span><span class="tag">認知行為治療</span><span class="tag">評估工具</span><span class="tag">注意偏見</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42892210/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🧠</span>
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>青少年期開始定期使用大麻與金錢獎賞處理中的神經與行為異常相關</h3>
+          <p class="journal-source">Psychopharmacology</p>
+          <p>青少年期定期使用大麻者在金錢激延遲任務中表現出中邊緣皮質系統活動異常，伴隨行為表現受損與腦-行為耦合中斷，提示早期使用可能損傷獎賞處理核心迴路。</p>
+          <div class="card-footer">
+            <span class="tag">青少年大麻使用</span><span class="tag">大麻神經影像</span><span class="tag">獎賞處理</span><span class="tag">內源性大麻素</span><span class="tag">精神共病</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42891834/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">⚡</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>合成大麻素擾亂視丘-前額葉 gamma 同步性並增加高電壓紡錘波，可能損伤感觉閘門與認知整合</h3>
+          <p class="journal-source">Psychopharmacology</p>
+          <p>合成大麻素 5F-EDMB-PICA 在鼠模型中降低前額葉與視丘局部 gamma 波，但增強長距離 gamma 同步性並增加視丘高電壓紡錘波，顯示thalamo-prefrontal迴路的振盪脫節，可能導致認知與感觉處理失調。</p>
+          <div class="card-footer">
+            <span class="tag">合成大麻素</span><span class="tag">神經生物學</span><span class="tag">內源性大麻素</span><span class="tag">精神病</span><span class="tag">認知障礙</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42891833/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🧘</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>冥想結合酒精使用與提升幸福感相關，但其他藥物單獨使用則降低幸福感</h3>
+          <p class="journal-source">Psychopharmacology</p>
+          <p>酒精、大麻、尼古丁比經典致幻藥更常與冥想共用；僅酒精結合冥想顯著提升幸福感，其他藥物單獨使用降低幸福感，而結合冥想則減緩此負面影響。</p>
+          <div class="card-footer">
+            <span class="tag">冥想</span><span class="tag">多藥物使用</span><span class="tag">幸福感</span><span class="tag">酒精使用</span><span class="tag">心理彈性</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42891832/" target="_blank" rel="noopener">PubMed →</a>
+          </div>
+        </div></div>
+
+  <div class="topic-section section"><div class="section-title"><span class="section-icon">📊</span>主題分佈</div>
+            <div class="topic-row">
+              <span class="topic-name">大麻使用障礙</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div>
+              <span class="topic-count">3</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">青少年大麻使用</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:67%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">大麻政策</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">大麻神經影像</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:67%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">合成大麻素</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">注意偏見</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">獎賞處理</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">冥想</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">多藥物使用</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">精神病</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">公共衛生</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">減傷</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">條件管理</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">內源性大麻素</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:67%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">神經生物學</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div>
+              <span class="topic-count">3</span>
+            </div></div>
+
+  <div class="keywords-section section"><div class="section-title"><span class="section-icon">🏷️</span>關鍵字</div><div class="keywords"><span class="keyword">大麻使用障礙</span><span class="keyword">注意偏見</span><span class="keyword">青少年大麻使用</span><span class="keyword">合成大麻素</span><span class="keyword">政策創新</span><span class="keyword">神經影像</span><span class="keyword">獎賞處理</span><span class="keyword">冥想</span><span class="keyword">多藥物使用</span><span class="keyword">幸福感</span></div></div>
+
+  <div class="links-section">
+    <a href="https://www.leepsyclinic.com/" class="link-card" target="_blank" rel="noopener">
+      <span class="link-icon">🏥</span>
+      <span class="link-name">李政洋身心診所首頁</span>
+      <span class="link-arrow">→</span>
+    </a>
+    <a href="https://blog.leepsyclinic.com/" class="link-card" target="_blank" rel="noopener">
+      <span class="link-icon">📬</span>
+      <span class="link-name">訂閱電子報</span>
+      <span class="link-arrow">→</span>
+    </a>
+    <a href="https://buymeacoffee.com/CYlee" class="link-card" target="_blank" rel="noopener">
+      <span class="link-icon">☕</span>
+      <span class="link-name">Buy Me a Coffee</span>
+      <span class="link-arrow">→</span>
+    </a>
+  </div>
+
+  <footer>
+    <span>資料來源：PubMed &middot; 分析模型：nvidia/nemotron-3-super-120b-a12b</span>
+    <span><a href="https://github.com/u8901006/marijuna-addiction">GitHub</a></span>
+  </footer>
+</div>
+</body>
+</html>
